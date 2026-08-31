@@ -1,22 +1,50 @@
 package pe.edu.upeu.asistencia.academico.controller;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import pe.edu.upeu.asistencia.academico.dto.CursoDTO;
+import org.springframework.web.bind.annotation.*;
+import pe.edu.upeu.asistencia.academico.model.Curso;
+import pe.edu.upeu.asistencia.academico.service.CursoService;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/academico")
+@RequestMapping("/api/v1/academico/cursos")
 public class AcademicoController {
 
-    @GetMapping("/cursos")
-    public ResponseEntity<List<CursoDTO>> listarCursos() {
-        return ResponseEntity.ok(List.of(
-            new CursoDTO(1L, "Lenguaje de Programación II"),
-            new CursoDTO(2L, "Análisis y Diseño de Sistemas")
-        ));
+    private final CursoService cursoService;
+
+    public AcademicoController(CursoService cursoService) {
+        this.cursoService = cursoService;
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Curso>> listarCursos() {
+        return ResponseEntity.ok(cursoService.listarTodos());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Curso> obtenerCurso(@PathVariable Long id) {
+        return ResponseEntity.ok(cursoService.obtenerPorId(id));
+    }
+
+    @PostMapping
+    public ResponseEntity<Curso> crearCurso(@RequestBody Curso curso) {
+        return ResponseEntity.ok(cursoService.crear(curso));
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Curso> actualizarCurso(
+            @PathVariable Long id,
+            @RequestBody Curso curso) {
+
+        return ResponseEntity.ok(cursoService.actualizar(id, curso));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> eliminarCurso(@PathVariable Long id) {
+
+        cursoService.eliminar(id);
+
+        return ResponseEntity.noContent().build();
     }
 }

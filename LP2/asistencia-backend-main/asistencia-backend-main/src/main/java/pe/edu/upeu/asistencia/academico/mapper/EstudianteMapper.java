@@ -9,17 +9,21 @@ import pe.edu.upeu.asistencia.academico.model.Estudiante;
 public class EstudianteMapper {
 
     public Estudiante toEntity(EstudianteRequest request) {
+
         Estudiante estudiante = new Estudiante();
+
         estudiante.setCodigo(request.codigo());
         estudiante.setNombre(request.nombre());
+
         return estudiante;
     }
 
     public EstudianteResponse toResponse(Estudiante entity) {
+
         return new EstudianteResponse(
-            entity.getId(),
-            entity.getCodigo(),
-            entity.getNombre()
+                entity.getId(),
+                entity.getCodigo(),
+                entity.getNombre()
         );
     }
 }
