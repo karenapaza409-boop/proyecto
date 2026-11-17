@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: cantomoda-backend
+  profiles:
+    default: dev
+  jackson:
+    deserialization:
+      accept-float-as-int: false
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        default_batch_fetch_size: 50
+    hibernate:
+      ddl-auto: update
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${KEYCLOAK_ISSUER:http://localhost:38081/realms/cantomoda}
+          jwk-set-uri: ${KEYCLOAK_JWKS:http://localhost:38081/realms/cantomoda/protocol/openid-connect/certs}
+cantomoda:
+  keycloak-admin:
+    url: ${KEYCLOAK_ADMIN_URL:http://localhost:38081}
+    realm: ${KEYCLOAK_ADMIN_REALM:cantomoda}
+    client-id: ${KEYCLOAK_SERVICE_CLIENT_ID:cantomoda-backend}
+    client-secret: ${KEYCLOAK_SERVICE_CLIENT_SECRET:cantomoda-backend-secret-2026}
+  cors-origins: ${CORS_ORIGINS:http://localhost:4201}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: never
+server:
+  port: ${SERVER_PORT:8080}

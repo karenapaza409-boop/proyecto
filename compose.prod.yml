@@ -1,0 +1,24 @@
+services:
+  backend:
+    build: ./backend
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      DB_URL: jdbc:oracle:thin:@oracle:1521/FREEPDB1
+      DB_USER: CANTOMODA_APP
+      DB_PASSWORD: ${DB_PASSWORD}
+      KEYCLOAK_ISSUER: http://localhost:38081/realms/cantomoda
+      KEYCLOAK_JWKS: http://keycloak:8080/realms/cantomoda/protocol/openid-connect/certs
+      CORS_ORIGINS: http://localhost:4201
+      KEYCLOAK_ADMIN_URL: http://keycloak:8080
+      KEYCLOAK_SERVICE_CLIENT_ID: ${KEYCLOAK_SERVICE_CLIENT_ID:-}
+      KEYCLOAK_SERVICE_CLIENT_SECRET: ${KEYCLOAK_SERVICE_CLIENT_SECRET:-}
+    depends_on:
+      oracle:
+        condition: service_healthy
+      keycloak:
+        condition: service_started
+    ports: ["8080:8080"]
+  frontend:
+    build: ./frontend
+    ports: ["4201:80"]
+    depends_on: [backend]

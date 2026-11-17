@@ -1,0 +1,28 @@
+❯ Building...
+✔ Building...
+Initial chunk files | Names          |  Raw size | Estimated transfer size
+main-N2GSZOIQ.js    | main           | 293.02 kB |                80.11 kB
+styles-3ZJQOZLC.css | styles         |  10.29 kB |                 2.66 kB
+
+                    | Initial total  | 303.31 kB |                82.77 kB
+
+Lazy chunk files    | Names          |  Raw size | Estimated transfer size
+chunk-C27j62q9.js   | -              |  48.63 kB |                10.08 kB
+chunk-h-FjUjh1.js   | operacion-form |   7.55 kB |                 2.96 kB
+chunk-bkaMgHLM.js   | operacion-list |   6.90 kB |                 2.57 kB
+chunk-aawTjAUz.js   | producto-list  |   4.50 kB |                 1.78 kB
+chunk-BBr5gJdA.js   | producto-form  |   3.49 kB |                 1.53 kB
+chunk-DXaZrj_S.js   | master-list    |   3.01 kB |                 1.24 kB
+chunk-bAz486AY.js   | master-form    |   2.79 kB |                 1.25 kB
+chunk-BtDzcIh7.js   | auditoria-list |   2.61 kB |                 1.19 kB
+chunk-DKI-2ZGD.js   | layout         |   2.16 kB |               859 bytes
+chunk-BagOwtK0.js   | inicio         |   1.51 kB |               699 bytes
+chunk-BDOhAwOz.js   | login          |   1.30 kB |               731 bytes
+chunk-DvJD85g_.js   | callback       |   1.05 kB |               604 bytes
+chunk-CguAYh6m.js   | -              | 972 bytes |               972 bytes
+chunk-BQlQgI5r.js   | sin-permiso    | 504 bytes |               504 bytes
+
+Application bundle generation complete. [1.489 seconds] - 2026-11-07T23:53:13.937Z
+
+Output location: <proyecto>/frontend/dist/cantomoda-frontend
+

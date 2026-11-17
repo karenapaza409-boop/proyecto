@@ -1,0 +1,444 @@
+:host {
+  display: block;
+  color: var(--text-primary);
+}
+
+.auditoria-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Badge de paso */
+.step-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  border: 1px solid var(--primary-border);
+  border-radius: var(--radius-pill);
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  width: fit-content;
+  margin-bottom: 6px;
+}
+
+.step-badge::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+/* ==================== ENCABEZADOS ==================== */
+.page-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.page-heading h1 {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.page-heading p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  width: fit-content;
+  margin-bottom: 10px;
+}
+
+.back-link:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+/* ==================== PANTALLA 1: HISTORIAL DE ACTIVIDAD ==================== */
+.filtros-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-card);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: var(--shadow-tarjeta);
+}
+
+.filtros-row-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr;
+  gap: 16px;
+}
+
+.filtros-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto auto;
+  gap: 14px;
+  align-items: flex-end;
+}
+
+@media (max-width: 900px) {
+  .filtros-row-1,
+  .filtros-row-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.filtro-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.filtro-item label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.filtro-input,
+.filtro-select {
+  padding: 10px 14px;
+  background: var(--surface-input);
+  border: 1px solid var(--surface-input-border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 14px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.filtro-input:focus,
+.filtro-select:focus {
+  border-color: var(--primary);
+  box-shadow: var(--foco-anillo);
+}
+
+.filtro-select {
+  cursor: pointer;
+}
+
+.filtro-botones {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Tabla del Historial */
+.table-panel {
+  background: var(--surface-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-tarjeta);
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+thead th {
+  background: #F9FAFB;
+  padding: 12px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-color);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+tbody td {
+  padding: 14px 18px;
+  font-size: 14px;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-divider);
+  vertical-align: middle;
+}
+
+tbody tr:hover td {
+  background: #F9FAFB;
+}
+
+.td-fecha {
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.td-referencia {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.link-ver-detalle {
+  color: var(--primary);
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 600;
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 14px;
+}
+
+.link-ver-detalle:hover {
+  color: var(--primary-hover);
+}
+
+/* Pie de tabla */
+.table-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: #F9FAFB;
+  border-top: 1px solid var(--border-divider);
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.pagination-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pagination-btn {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: var(--radius-xs);
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background: var(--surface-card-hover);
+}
+
+.pagination-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.info-permisos {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+/* ==================== PANTALLA 2: DETALLE DEL EVENTO ==================== */
+.detalle-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.detalle-heading h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+  color: var(--text-primary);
+}
+
+.detalle-heading p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.card-meta-info {
+  background: var(--surface-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-card);
+  padding: 20px 24px;
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 12px 24px;
+  box-shadow: var(--shadow-tarjeta);
+}
+
+@media (max-width: 600px) {
+  .card-meta-info {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+.meta-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.meta-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.meta-value.highlight {
+  color: var(--primary);
+}
+
+.section-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.card-cambios {
+  background: var(--surface-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-tarjeta);
+}
+
+.valor-despues {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.card-motivo {
+  background: var(--surface-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-card);
+  padding: 16px 20px;
+  color: var(--text-primary);
+  font-size: 14px;
+  line-height: 1.5;
+  box-shadow: var(--shadow-tarjeta);
+}
+
+.detalle-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.sketch-disclaimer {
+  text-align: right;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--primary);
+  color: #FFFFFF;
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-sm);
+  padding: 9px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #FFFFFF;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 9px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--surface-card-hover);
+  border-color: #9CA3AF;
+}
+
+.btn-link-clean {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 8px 14px;
+}
+
+.btn-link-clean:hover {
+  color: var(--text-primary);
+  background: var(--surface-card-hover);
+}
+
+.error-banner {
+  background: var(--status-red-bg);
+  border: 1px solid var(--status-red-border);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  color: var(--status-red);
+  font-size: 13px;
+}

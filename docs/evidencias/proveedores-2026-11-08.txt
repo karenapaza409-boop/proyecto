@@ -1,0 +1,18 @@
+Proveedores - 2026-11-08 - America/Lima
+Alcance: proveedores y conexion existente con compras.
+Maven package: BUILD SUCCESS. Persistencia de pruebas: H2 modo Oracle.
+
+pe.edu.cantomoda.FlujoIntegracionTest: tests=15, failures=0, errors=0, skipped=0
+pe.edu.cantomoda.ModularityTests: tests=1, failures=0, errors=0, skipped=0
+pe.edu.cantomoda.ProveedorIntegracionTest: tests=8, failures=0, errors=0, skipped=0
+pe.edu.cantomoda.seguridad.KeycloakAdminClientTest: tests=3, failures=0, errors=0, skipped=0
+pe.edu.cantomoda.seguridad.UsuariosTest: tests=4, failures=0, errors=0, skipped=0
+
+Angular: 18 tests passed, 6 files.
+Angular production: success, initial=304.48 kB, estimated transfer=83.00 kB.
+Edge UI: 2 tests passed. API interceptada y credenciales/datos ficticios solo en tests.
+Alta, errores por campo, duplicado, ficha, compra preseleccionada, historial y desactivacion comprobados.
+Capturas escritorio y movil inspeccionadas; ancho movil 390 px sin desbordamiento de pagina.
+Helper migracion: AST PowerShell valido.
+Migracion Oracle y login real Keycloak: NO VERIFICADOS. No se aplicaron scripts SQL sobre datos del usuario.
+No se eliminaron datos, tablas, esquemas o volumenes; no se clasificaron documentos anteriores automaticamente.

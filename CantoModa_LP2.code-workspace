@@ -1,0 +1,7 @@
+{
+  "folders": [{ "name": "Canto Moda", "path": "." }],
+  "settings": {
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "window.title": "Canto Moda — ${activeEditorShort}"
+  }
+}

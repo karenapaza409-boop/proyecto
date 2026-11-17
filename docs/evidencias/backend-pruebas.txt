@@ -1,0 +1,5 @@
+[INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 15.55 s -- in pe.edu.cantomoda.FlujoIntegracionTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.869 s -- in pe.edu.cantomoda.ModularityTests
+[INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+[INFO] Finished at: 2026-11-07T18:52:33-05:00

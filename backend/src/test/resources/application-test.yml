@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:cantomoda;MODE=Oracle;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:h2-schema.sql
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+logging:
+  level:
+    root: WARN

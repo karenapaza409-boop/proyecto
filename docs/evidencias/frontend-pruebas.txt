@@ -1,0 +1,13 @@
+❯ Building...
+✔ Building...
+Application bundle generation complete. [0.989 seconds] - 2026-11-07T23:53:00.699Z
+
+
+ RUN  v5.0.5 <proyecto>/frontend
+
+
+ Test Files  3 passed (3)
+      Tests  7 passed (7)
+   Start at  18:53:00
+   Duration  631ms (environment 54%, setup 24%, transform 11%, import 7%, tests 4%, worker 1%)
+

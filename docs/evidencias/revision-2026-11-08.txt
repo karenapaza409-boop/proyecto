@@ -1,0 +1,15 @@
+Revision: 2026-11-08, America/Lima
+Backend: mvnw.cmd package - BUILD SUCCESS
+Java Temurin 21.0.12.1; Node 24.16.0; npm 11.13.0
+Angular core 22.2.3; CLI 22.2.4; RxJS 7.8.2; TypeScript 6.0.3; Vitest 5.0.5
+
+pe.edu.cantomoda.FlujoIntegracionTest: tests=15, failures=0, errors=0, skipped=0
+pe.edu.cantomoda.ModularityTests: tests=1, failures=0, errors=0, skipped=0
+pe.edu.cantomoda.seguridad.KeycloakAdminClientTest: tests=3, failures=0, errors=0, skipped=0
+pe.edu.cantomoda.seguridad.UsuariosTest: tests=4, failures=0, errors=0, skipped=0
+
+Frontend: npm test -- --watch=false: 10 passed, 4 files
+Frontend: npm run build -- --configuration production: success, initial=303.83 kB, estimated transfer=82.79 kB
+PowerShell scripts: AST parse success; configurar.ps1 preserved existing .env
+Oracle, real Keycloak, Docker and browser E2E: not verified
+No migrations or database repair scripts executed

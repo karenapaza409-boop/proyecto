@@ -1,0 +1,32 @@
+❯ Building...
+✔ Building...
+Initial chunk files | Names          |  Raw size
+chunk-PJX2BX6E.js   | -              |   1.19 MB | 
+chunk-4QGVMLV3.js   | -              | 261.73 kB | 
+styles.css          | styles         |  12.61 kB | 
+main.js             | main           |  10.81 kB | 
+chunk-HTXERM3J.js   | -              |   6.11 kB | 
+chunk-6MPCGBAD.js   | -              | 325 bytes | 
+
+                    | Initial total  |   1.48 MB
+
+Lazy chunk files    | Names          |  Raw size
+chunk-Y7BXFWK3.js   | -              | 165.01 kB | 
+chunk-CBPKIRNK.js   | operacion-list |  23.54 kB | 
+chunk-M7YZCXDX.js   | operacion-form |  22.68 kB | 
+chunk-5TBTC4CR.js   | producto-list  |  15.25 kB | 
+chunk-X3OTCEQM.js   | master-list    |  10.80 kB | 
+chunk-Q3JFERAP.js   | producto-form  |  10.27 kB | 
+chunk-GT4TYROI.js   | auditoria-list |   9.22 kB | 
+chunk-OISS2TNI.js   | master-form    |   7.91 kB | 
+chunk-26BIB52U.js   | layout         |   6.93 kB | 
+chunk-XAIKEY55.js   | inicio         |   5.03 kB | 
+chunk-FKVNFWFW.js   | login          |   4.28 kB | 
+chunk-4CJDXH3V.js   | callback       |   3.35 kB | 
+chunk-YMQCSLIR.js   | -              |   1.92 kB | 
+chunk-XL3ZJTPA.js   | sin-permiso    |   1.81 kB | 
+
+Application bundle generation complete. [1.206 seconds] - 2026-11-07T23:53:07.153Z
+
+Output location: <proyecto>/frontend/dist/cantomoda-frontend
+

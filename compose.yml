@@ -1,0 +1,51 @@
+name: cantomoda-lp2
+services:
+  oracle:
+    image: gvenzl/oracle-free:23-slim
+    ports: ["1523:1521"]
+    environment:
+      ORACLE_PASSWORD: ${ORACLE_PASSWORD:?Ejecute scripts/configurar.ps1}
+      DB_PASSWORD: ${DB_PASSWORD:?Ejecute scripts/configurar.ps1}
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+      - ./database/01-init.sh:/container-entrypoint-initdb.d/01-init.sh:ro
+      - ./database/02_tablas_datos.sql:/opt/cantomoda/02_tablas_datos.sql:ro
+      - ./database/migrations:/opt/cantomoda/migrations:ro
+    healthcheck:
+      test: ["CMD-SHELL", "healthcheck.sh && test -f /opt/oracle/oradata/.cantomoda-inicializado"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 60s
+  keycloak-db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: cantomoda_keycloak
+      POSTGRES_USER: cantomoda_keycloak
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Ejecute scripts/configurar.ps1}
+    volumes: ["keycloak-db:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cantomoda_keycloak -d cantomoda_keycloak"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.8.0
+    command: ["start-dev", "--import-realm"]
+    ports: ["38081:8080"]
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD:?Ejecute scripts/configurar.ps1}
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://keycloak-db:5432/cantomoda_keycloak
+      KC_DB_USERNAME: cantomoda_keycloak
+      KC_DB_PASSWORD: ${POSTGRES_PASSWORD}
+      KC_HOSTNAME: http://localhost:38081
+      KC_HEALTH_ENABLED: 'true'
+    depends_on:
+      keycloak-db:
+        condition: service_healthy
+    volumes: ["./keycloak:/opt/keycloak/data/import:ro"]
+volumes:
+  oracle-data:
+  keycloak-db:
